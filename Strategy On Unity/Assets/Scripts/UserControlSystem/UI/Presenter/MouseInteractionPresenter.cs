@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Abstractions;
+using Assets.Scripts.Core;
 using UnityEngine;
 using UserControlSystem;
 
@@ -7,6 +8,7 @@ public sealed class MouseInteractionPresenter : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private SelectableValue _selectedObject;
+    [SerializeField] private SelectableValueSelected _selectableValueSelected;
 
     private void Update()
     {
@@ -23,6 +25,6 @@ public sealed class MouseInteractionPresenter : MonoBehaviour
             .Select(hit => hit.collider.GetComponentInParent<ISelectable>())
             .FirstOrDefault(c => c != null);
         _selectedObject.SetValue(selectable);
-        selectable.ProduceUnit();
+        _selectableValueSelected.SetValue(selectable);
     }
 }
