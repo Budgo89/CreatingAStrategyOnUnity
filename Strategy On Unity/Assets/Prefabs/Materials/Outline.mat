@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Outline
-  m_Shader: {fileID: 4800000, guid: 9e7825cba6c521547ac22f292bb3c422, type: 3}
+  m_Shader: {fileID: 10760, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -161,6 +161,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DetailScale: 1
@@ -184,12 +185,18 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _TextureScale01: 1
     - _TextureScale02: 1
     - _TextureScale03: 1
     - _TopGlossiness: 0.5
     - _TopMetallic: 0
     - _UVSec: 0
+    - _UseUIAlphaClip: 0
     - _WaterEdge: 1
     - _ZWrite: 1
     - _glowFrequency: 1
