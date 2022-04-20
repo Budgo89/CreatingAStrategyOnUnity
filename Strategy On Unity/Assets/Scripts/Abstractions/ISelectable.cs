@@ -7,7 +7,5 @@ namespace Abstractions
         float Health { get; }
         float MaxHealth { get; }
         Sprite Icon { get; }
-
-        void ProduceUnit();
     }
 }
