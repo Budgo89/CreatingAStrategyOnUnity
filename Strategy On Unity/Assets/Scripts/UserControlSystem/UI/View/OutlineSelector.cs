@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,31 +6,38 @@ using UnityEngine;
 
 public class OutlineSelector : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer[] _renderers;
-    [SerializeField] private Material _outlineMaterial;
+    [SerializeField] private Outline[] _outlineComponents;
 
     private bool _isSelectedCache;
+
+    private void Start() => DisableOutline();
 
     public void SetSelected(bool isSelected)
     {
         if (isSelected == _isSelectedCache)
-        {
             return;
-        }
-        for (int i = 0; i < _renderers.Length; i++)
-        {
-            var renderer = _renderers[i];
-            var materialsList = renderer.materials.ToList();
-            if (isSelected)
-            {
-                materialsList.Add(_outlineMaterial);
-            }
-            else
-            {
-                materialsList.RemoveAt(materialsList.Count - 1);
-            }
-            renderer.materials = materialsList.ToArray();
-        }
+
+        if (isSelected)
+            EnableOutline();
+        else
+            DisableOutline();
+
         _isSelectedCache = isSelected;
+    }
+
+    private void DisableOutline()
+    {
+        foreach (var outlineComponent in _outlineComponents)
+        {
+            outlineComponent.enabled = false;
+        }
+    }
+
+    private void EnableOutline()
+    {
+        foreach (var outlineComponent in _outlineComponents)
+        {
+            outlineComponent.enabled = true;
+        }
     }
 }

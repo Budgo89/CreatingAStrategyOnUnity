@@ -6,36 +6,44 @@ namespace UserControlSystem.UI.Presenter
     public class OutlineSelectorPresenter : MonoBehaviour
     {
         [SerializeField] private SelectableValue _selectable;
+
         private OutlineSelector[] _outlineSelectors;
         private ISelectable _currentSelectable;
         private void Start()
         {
-            _selectable.OnSelected += onSelected;
-            onSelected(_selectable.CurrentValue);
+            _selectable.OnSelected += OnSelected;
         }
-        private void onSelected(ISelectable selectable)
+        private void OnSelected(ISelectable selectable)
         {
             if (_currentSelectable == selectable)
             {
                 return;
             }
-            _currentSelectable = selectable;
-            setSelected(_outlineSelectors, false);
+
+            SetSelected(_outlineSelectors, false);
             _outlineSelectors = null;
+
             if (selectable != null)
             {
-                _outlineSelectors = (selectable as
-                    Component).GetComponentsInParent<OutlineSelector>();
-                setSelected(_outlineSelectors, true);
+                _outlineSelectors = (selectable as Component).GetComponentsInParent<OutlineSelector>();
+                SetSelected(_outlineSelectors, true);
             }
-            static void setSelected(OutlineSelector[] selectors, bool value)
+            else
             {
-                if (selectors != null)
+                if (_outlineSelectors != null)
                 {
-                    for (int i = 0; i < selectors.Length; i++)
-                    {
-                        selectors[i].SetSelected(value);
-                    }
+                    SetSelected(_outlineSelectors, false);
+                }
+            }
+
+            _currentSelectable = selectable;
+
+            static void SetSelected(OutlineSelector[] selectors, bool value)
+            {
+                if (selectors == null) return;
+                foreach (var selector in selectors)
+                {
+                    selector.SetSelected(value);
                 }
             }
         }

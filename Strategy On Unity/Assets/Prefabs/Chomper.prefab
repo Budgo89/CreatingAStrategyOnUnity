@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: -6589602338681744806}
   - component: {fileID: 4794341288533718662}
   - component: {fileID: 8513444678175010218}
+  - component: {fileID: 8647196532227545342}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -515,6 +516,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.853009, y: 1, z: 1.8443522}
   m_Center: {x: -0.02221942, y: 0, z: -0.19548988}
+--- !u!114 &8647196532227545342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ebdccfecf62fe48a19776a24ff0395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outlineComponents:
+  - {fileID: 5839455929718289446}
 --- !u!1 &5050581994575606299
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5050581994575900219}
   - component: {fileID: 5050581994572431131}
+  - component: {fileID: 5839455929718289446}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -674,6 +690,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000014901161, y: 0.2972716, z: 0.12567535}
     m_Extent: {x: 0.43989497, y: 0.5674504, z: 0.81411386}
   m_DirtyAABB: 0
+--- !u!114 &5839455929718289446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5050581994575606337
 GameObject:
   m_ObjectHideFlags: 0
