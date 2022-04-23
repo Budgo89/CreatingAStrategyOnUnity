@@ -20,13 +20,13 @@ namespace UserControlSystem.UI.Presenter
 
         private void Start()
         {
-            _selectable.OnSelected += ONSelected;
-            ONSelected(_selectable.CurrentValue);
+            _selectable.OnSelected += OnSelected;
+            OnSelected(_selectable.CurrentValue);
 
-            _view.OnClick += ONButtonClick;
+            _view.OnClick += OnButtonClick;
         }
 
-        private void ONSelected(ISelectable selectable)
+        private void OnSelected(ISelectable selectable)
         {
             if (_currentSelectable == selectable)
             {
@@ -43,7 +43,7 @@ namespace UserControlSystem.UI.Presenter
             }
         }
 
-        private void ONButtonClick(ICommandExecutor commandExecutor)
+        private void OnButtonClick(ICommandExecutor commandExecutor)
         {
             var unitProducer = commandExecutor as CommandExecutorBase<IProduceUnitCommand>;
             if (unitProducer != null)
@@ -79,7 +79,7 @@ namespace UserControlSystem.UI.Presenter
                 return;
             }
 
-            throw new ApplicationException($"{nameof(CommandButtonsPresenter)}.{nameof(ONButtonClick)}: " +
+            throw new ApplicationException($"{nameof(CommandButtonsPresenter)}.{nameof(OnButtonClick)}: " +
                                            $"Unknown type of commands executor: {commandExecutor.GetType().FullName}!");
         }
     }
