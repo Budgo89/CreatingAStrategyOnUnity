@@ -7,7 +7,7 @@ namespace Abstractions.Commands
     {
         public override void ExecuteSpecificCommand(IPatrolCommand command)
         {
-            Debug.Log($"{name} патрулирует!");
+            Debug.Log($"{name} патрулирует из {command.From} в {command.To}!");
         }
     }
 }

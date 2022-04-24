@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 645378454180959057}
   - component: {fileID: 645378454179664753}
   - component: {fileID: 645378454178533809}
+  - component: {fileID: 6733500009753338873}
   m_Layer: 0
   m_Name: VegetationMedium01_LOD01
   m_TagString: Untagged
@@ -81,6 +82,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6733500009753338873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645378454180728689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.023529412, g: 1, b: 0.007843138, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &645378454180728691
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +111,7 @@ GameObject:
   - component: {fileID: 645378454180959059}
   - component: {fileID: 645378454179664755}
   - component: {fileID: 645378454178533811}
+  - component: {fileID: 7426997185654035576}
   m_Layer: 0
   m_Name: VegetationMedium01_LOD02
   m_TagString: Untagged
@@ -162,6 +182,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7426997185654035576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645378454180728691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.023529412, g: 1, b: 0.007843138, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &645378454180728693
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 645378454180959061}
   - component: {fileID: 645378454163507189}
+  - component: {fileID: 2866814313194292257}
+  - component: {fileID: 7683543863975845403}
   m_Layer: 0
   m_Name: MainBuilding
   m_TagString: Untagged
@@ -224,6 +264,38 @@ LODGroup:
     renderers:
     - renderer: {fileID: 645378454178533811}
   m_Enabled: 1
+--- !u!114 &2866814313194292257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645378454180728693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e01563d37a23f4e9bae517fb3e14dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitsParent: {fileID: 0}
+  _pivotPoint: {fileID: 645378454180959061}
+  _maxHealth: 1000
+  _icon: {fileID: 21300000, guid: 712262adeebd1924cad36360993fca8a, type: 3}
+--- !u!114 &7683543863975845403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645378454180728693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcd92dab35c27546b2de44276e16db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outlineComponents:
+  - {fileID: 2875670673939564096}
+  - {fileID: 6733500009753338873}
+  - {fileID: 7426997185654035576}
 --- !u!1 &645378454180728695
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +307,7 @@ GameObject:
   - component: {fileID: 645378454180959063}
   - component: {fileID: 645378454179664759}
   - component: {fileID: 645378454178533815}
+  - component: {fileID: 2875670673939564096}
   m_Layer: 0
   m_Name: VegetationMedium01_LOD00
   m_TagString: Untagged
@@ -305,6 +378,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2875670673939564096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645378454180728695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.02302351, g: 1, b: 0.0047169924, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &3740038944931529981
 PrefabInstance:
   m_ObjectHideFlags: 0

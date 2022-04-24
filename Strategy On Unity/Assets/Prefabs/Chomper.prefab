@@ -392,13 +392,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5050581994575900217}
   - component: {fileID: 5050581994568204763}
-  - component: {fileID: 8871542564859257070}
-  - component: {fileID: 6601012134913420740}
-  - component: {fileID: -1999592291584184633}
-  - component: {fileID: -6589602338681744806}
-  - component: {fileID: 4794341288533718662}
   - component: {fileID: 8513444678175010218}
-  - component: {fileID: 8647196532227545342}
+  - component: {fileID: 6830039695328044723}
+  - component: {fileID: 1682176928677251690}
+  - component: {fileID: 2023129540805302614}
+  - component: {fileID: 8870367081937875918}
+  - component: {fileID: 2514760395016278626}
+  - component: {fileID: 5360638083005736842}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -441,68 +441,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8871542564859257070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5050581994575606297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5691e6c671c1c084498a67b77c8865b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6601012134913420740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5050581994575606297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375eb3e0756bb51429f01d2274776b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-1999592291584184633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5050581994575606297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10424bf10223e6479138efc85421c3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6589602338681744806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5050581994575606297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa87678604696124fb2498f89fe5f5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4794341288533718662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5050581994575606297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dbefe929e5d96e43850d7c6eaf15b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 50
-  _icon: {fileID: 21300000, guid: 9908913e928c42d4f9f1891893bbc424, type: 3}
 --- !u!65 &8513444678175010218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -516,7 +454,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.853009, y: 1, z: 1.8443522}
   m_Center: {x: -0.02221942, y: 0, z: -0.19548988}
---- !u!114 &8647196532227545342
+--- !u!114 &6830039695328044723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,11 +463,74 @@ MonoBehaviour:
   m_GameObject: {fileID: 5050581994575606297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ebdccfecf62fe48a19776a24ff0395, type: 3}
+  m_Script: {fileID: 11500000, guid: f5c6c7354d8108348b5f6f15cc380736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1682176928677251690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892a3b959caa09b44a0b9ccb794573b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2023129540805302614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf92a9707fa19514f96516c59d6f19eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8870367081937875918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54237488be516a34aae2cf473adf3aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2514760395016278626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcd92dab35c27546b2de44276e16db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _outlineComponents:
   - {fileID: 5839455929718289446}
+--- !u!114 &5360638083005736842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050581994575606297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52110f5923f64f9f9c56c6bf5e59c124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pivotPoint: {fileID: 5050581994575900217}
+  _maxHealth: 100
+  _icon: {fileID: 21300000, guid: 9908913e928c42d4f9f1891893bbc424, type: 3}
 --- !u!1 &5050581994575606299
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,8 +703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineMode: 1
+  outlineColor: {r: 0.111882366, g: 0.9433962, b: 0.048949808, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []

@@ -17,10 +17,10 @@ namespace UserControlSystem
             Container.Bind<AssetsContext>().FromInstance(_legacyContext);
             Container.Bind<Vector3Value>().FromInstance(_vector3Value);
 
-            Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
-                .To<ProduceUnitCommandCommandCreator>().AsTransient();
-            Container.Bind<CommandCreatorBase<IMoveCommand>>()
-                .To<MoveCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IProduceUnitCommand>>().To<ProduceUnitCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IMoveCommand>>().To<MoveCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IAttackCommand>>().To<AttackCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IPatrolCommand>>().To<PatrolCommandCommandCreator>().AsTransient();
             
             Container.Bind<CommandButtonsModel>().AsTransient();
         }

@@ -4,10 +4,9 @@ using UnityEngine;
 namespace Abstractions.Commands
 {
     public class AttackCommandExecutor : CommandExecutorBase<IAttackCommand>
-    {
-        public override void ExecuteSpecificCommand(IAttackCommand command)
+    { public override void ExecuteSpecificCommand(IAttackCommand command)
         {
-            Debug.Log($"{name} в атаку!");
+            Debug.Log($"{name} в атаку на {command.Target}!");
         }
     }
 }
