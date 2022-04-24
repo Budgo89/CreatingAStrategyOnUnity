@@ -1,51 +1,55 @@
-﻿using Abstractions;
+using Abstractions;
 using UnityEngine;
+using UserControlSystem;
 
-namespace UserControlSystem.UI.Presenter
+public class OutlineSelectorPresenter : MonoBehaviour
 {
-    public class OutlineSelectorPresenter : MonoBehaviour
+    [SerializeField] private SelectableValue _selectableValue;
+    
+    private OutlineSelector[] _outlineSelectors;
+    private ISelectable _currentSelectable;
+
+    private void Start()
     {
-        [SerializeField] private SelectableValue _selectable;
+        _selectableValue.OnSelected += OnSelected;
+    }
 
-        private OutlineSelector[] _outlineSelectors;
-        private ISelectable _currentSelectable;
-        private void Start()
+    private void OnSelected(ISelectable selectable)
+    {
+        if (_currentSelectable == selectable)
         {
-            _selectable.OnSelected += OnSelected;
+            return;
         }
-        private void OnSelected(ISelectable selectable)
+        
+
+        SetSelected(_outlineSelectors, false);
+        _outlineSelectors = null;
+
+        if (selectable != null)
         {
-            if (_currentSelectable == selectable)
+            _outlineSelectors = (selectable as Component).GetComponentsInParent<OutlineSelector>();
+            SetSelected(_outlineSelectors, true);
+        }
+        else
+        {
+            if (_outlineSelectors != null)
             {
-                return;
+                SetSelected(_outlineSelectors, false);
             }
-
-            SetSelected(_outlineSelectors, false);
-            _outlineSelectors = null;
-
-            if (selectable != null)
+        }
+        
+        _currentSelectable = selectable;
+        
+        static void SetSelected(OutlineSelector[] selectors, bool value)
+        {
+            if (selectors != null)
             {
-                _outlineSelectors = (selectable as Component).GetComponentsInParent<OutlineSelector>();
-                SetSelected(_outlineSelectors, true);
-            }
-            else
-            {
-                if (_outlineSelectors != null)
+                for (int i = 0; i < selectors.Length; i++)
                 {
-                    SetSelected(_outlineSelectors, false);
-                }
-            }
-
-            _currentSelectable = selectable;
-
-            static void SetSelected(OutlineSelector[] selectors, bool value)
-            {
-                if (selectors == null) return;
-                foreach (var selector in selectors)
-                {
-                    selector.SetSelected(value);
+                    selectors[i].SetSelected(value);
                 }
             }
         }
     }
+
 }
