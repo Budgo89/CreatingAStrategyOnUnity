@@ -1,13 +1,11 @@
-﻿using System;
-using Abstractions.Commands.CommandsInterfaces;
+﻿using Abstractions.Commands.CommandsInterfaces;
 using UnityEngine;
+using UserControlSystem.CommandsRealization;
 
-namespace UserControlSystem.UI.Model.CommandCreator
+namespace UserControlSystem
 {
-    public class MoveCommandCommandCreator : CommandCreatorBase<IMoveCommand>
+    public sealed class MoveCommandCommandCreator : CancellableCommandCreatorBase<IMoveCommand, Vector3>
     {
-        protected override void ClassSpecificCommandCreation(Action<IMoveCommand> creationCallback)
-        {
-        }
+        protected override IMoveCommand CreateCommand(Vector3 argument) => new MoveCommand(argument);
     }
 }

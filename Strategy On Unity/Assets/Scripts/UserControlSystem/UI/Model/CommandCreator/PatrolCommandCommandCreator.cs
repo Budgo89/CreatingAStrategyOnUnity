@@ -1,43 +1,15 @@
-﻿using System;
-using Abstractions.Commands.CommandsInterfaces;
-using Assets.Scripts.Core;
+﻿using Abstractions.Commands.CommandsInterfaces;
 using UnityEngine;
-using Utils;
+using UserControlSystem.CommandsRealization;
 using Zenject;
 
-namespace UserControlSystem.UI.Model.CommandCreator
+namespace UserControlSystem
 {
-    public class PatrolCommandCommandCreator : CommandCreatorBase<IPatrolCommand>
+    public sealed class PatrolCommandCommandCreator : CancellableCommandCreatorBase<IPatrolCommand, Vector3>
     {
-    
-        [Inject] private AssetsContext _context;
         [Inject] private SelectableValue _selectable;
 
-        private Action<IPatrolCommand> _creationCallback;
-
-        [Inject]
-        private void Init(Vector3Value groundClicks)
-        {
-            groundClicks.OnNewValue += onNewValue;
-        }
-
-        private void onNewValue(Vector3 groundClick)
-        {
-            _creationCallback?.Invoke(_context.Inject(new
-                PatrolCommand(_selectable.CurrentValue.PivotPoint.position, groundClick)));
-            _creationCallback = null;
-        }
-
-        protected override void ClassSpecificCommandCreation(Action<IPatrolCommand> creationCallback)
-        {
-            _creationCallback = creationCallback;
-        }
-
-        public override void ProcessCancel()
-        {
-            base.ProcessCancel();
-            _creationCallback = null;
-        }
-
+        protected override IPatrolCommand CreateCommand(Vector3 argument) 
+            => new PatrolCommand(_selectable.CurrentValue.PivotPoint.position, argument);
     }
 }
