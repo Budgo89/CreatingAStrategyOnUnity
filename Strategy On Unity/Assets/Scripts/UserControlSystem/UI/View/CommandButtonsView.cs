@@ -66,16 +66,14 @@ namespace UserControlSystem.UI.View
         private GameObject GETButtonGameObjectByType(Type executorInstanceType)
         {
             return _buttonsByExecutorType
-                .First(type => type.Key.IsAssignableFrom(executorInstanceType))
-                .Value;
+                .First(type => type.Key.IsAssignableFrom(executorInstanceType)).Value;
         }
 
         public void Clear()
         {
             foreach (var kvp in _buttonsByExecutorType)
             {
-                kvp.Value
-                    .GetComponent<Button>().onClick.RemoveAllListeners();
+                kvp.Value.GetComponent<Button>().onClick.RemoveAllListeners();
                 kvp.Value.SetActive(false);
             }
         }

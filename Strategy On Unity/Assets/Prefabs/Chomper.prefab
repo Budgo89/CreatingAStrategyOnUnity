@@ -2060,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stop: {fileID: 4328585988128294532}
   _animator: {fileID: 6116066217494964946}
+  _stopCommandExecutor: {fileID: 920765487932839863}
 --- !u!114 &2776512781921497608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,7 +2175,6 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
