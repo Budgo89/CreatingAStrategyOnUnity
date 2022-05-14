@@ -1,7 +1,8 @@
-﻿using Abstractions.Commands.CommandsInterfaces;
+﻿using Abstractions.Commands;
+using Abstractions.Commands.CommandsInterfaces;
 using UnityEngine;
 
-namespace Abstractions.Commands.CommandExecutors
+namespace Core.CommandExecutors
 {
     public class PatrolCommandExecutor : CommandExecutorBase<IPatrolCommand>
     {

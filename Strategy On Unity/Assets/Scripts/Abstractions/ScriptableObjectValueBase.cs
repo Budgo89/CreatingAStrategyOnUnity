@@ -6,25 +6,6 @@ namespace UserControlSystem
 {
     public abstract class ScriptableObjectValueBase<T> : ScriptableObject, IAwaitable<T>
     {
-        public class NewValueNotifier<TAwaited> : AwaiterBase<TAwaited>
-        {
-            private readonly ScriptableObjectValueBase<TAwaited> _scriptableObjectValueBase;
-
-            public NewValueNotifier(ScriptableObjectValueBase<TAwaited> scriptableObjectValueBase)
-            {
-                _scriptableObjectValueBase = scriptableObjectValueBase;
-                _scriptableObjectValueBase.OnNewValue += ONNewValue;
-            }
-
-            private void ONNewValue(TAwaited obj)
-            {
-                _scriptableObjectValueBase.OnNewValue -= ONNewValue;
-                onWaitFinish(obj);
-
-            }
-
-        }
-
         public T CurrentValue { get; private set; }
         public Action<T> OnNewValue;
 

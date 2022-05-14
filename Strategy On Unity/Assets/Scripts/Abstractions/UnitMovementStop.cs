@@ -7,23 +7,6 @@ namespace Core
 {
     public class UnitMovementStop : MonoBehaviour, IAwaitable<AsyncExtensions.Void>
     {
-        public class StopAwaiter : AwaiterBase<AsyncExtensions.Void>
-        {
-            private readonly UnitMovementStop _unitMovementStop;
-
-            public StopAwaiter(UnitMovementStop unitMovementStop)
-            {
-                _unitMovementStop = unitMovementStop;
-                _unitMovementStop.OnStop += ONStop;
-            }
-
-            private void ONStop()
-            {
-                _unitMovementStop.OnStop -= ONStop;
-                onWaitFinish(new AsyncExtensions.Void());
-            }
-        }
-
         public event Action OnStop;
 
         [SerializeField] private NavMeshAgent _agent;

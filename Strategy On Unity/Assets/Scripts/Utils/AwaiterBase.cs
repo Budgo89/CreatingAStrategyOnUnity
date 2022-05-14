@@ -7,7 +7,9 @@ namespace Utils
         private Action _continuation;
         private bool _isCompleted;
         private TAwaited _result;
+
         public bool IsCompleted => _isCompleted;
+
         public TAwaited GetResult() => _result;
         
         public void OnCompleted(Action continuation)
@@ -22,12 +24,11 @@ namespace Utils
             }
         }
 
-        protected void onWaitFinish(TAwaited result)
+        protected void ONWaitFinish(TAwaited result)
         {
             _result = result;
             _isCompleted = true;
             _continuation?.Invoke();
         }
-
     }
 }
