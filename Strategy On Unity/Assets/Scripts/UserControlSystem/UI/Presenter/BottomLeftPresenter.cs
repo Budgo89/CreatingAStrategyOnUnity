@@ -1,7 +1,10 @@
-﻿using Abstractions;
+﻿using System;
+using Abstractions;
 using TMPro;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace UserControlSystem
 {
@@ -13,12 +16,11 @@ namespace UserControlSystem
         [SerializeField] private Image _sliderBackground;
         [SerializeField] private Image _sliderFillImage;
 
-        [SerializeField] private SelectableValue _selectedValue;
+        [Inject] private IObservable<ISelectable> _selectbleValue;
 
         private void Start()
         {
-            _selectedValue.OnNewValue += ONSelected;
-            ONSelected(_selectedValue.CurrentValue);
+            _selectbleValue.Subscribe(ONSelected);
         }
         
         private void ONSelected(ISelectable selected)
