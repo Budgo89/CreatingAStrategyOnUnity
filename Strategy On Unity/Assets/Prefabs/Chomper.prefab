@@ -1974,6 +1974,8 @@ GameObject:
   - component: {fileID: 920765487932839863}
   - component: {fileID: 5018740845975843947}
   - component: {fileID: 4328585988128294532}
+  - component: {fileID: 6990844727276077286}
+  - component: {fileID: 4916968486502742539}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -2132,6 +2134,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 5018740845975843947}
+--- !u!114 &6990844727276077286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116066217487538448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 4916968486502742539}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &4916968486502742539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116066217487538448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724ff9f6c80e0b044b7db58730dc6075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6116066217487538450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2207,6 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
