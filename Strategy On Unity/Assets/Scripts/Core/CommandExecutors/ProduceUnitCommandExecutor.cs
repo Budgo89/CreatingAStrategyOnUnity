@@ -4,6 +4,7 @@ using Abstractions.Commands;
 using Abstractions.Commands.CommandsInterfaces;
 using UniRx;
 using UnityEngine;
+using UserControlSystem.CommandsRealization;
 using Zenject;
 using Random = UnityEngine.Random;
 
@@ -32,7 +33,11 @@ namespace Core.CommandExecutors
             {
                 removeTaskAtIndex(0);
                 Instantiate(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
-                _diContainer.InstantiatePrefab(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+                var instance = _diContainer.InstantiatePrefab(innerTask.UnitPrefab, transform.position,
+                    Quaternion.identity, _unitsParent);
+                var queue = instance.GetComponent<ICommandsQueue>();
+                var mainBuilding = GetComponent<MainBuilding>();
+                queue.EnqueueCommand(new MoveCommand(mainBuilding.RallyPoint));
             }
         }
 

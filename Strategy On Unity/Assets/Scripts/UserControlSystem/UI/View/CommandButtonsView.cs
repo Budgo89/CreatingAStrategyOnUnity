@@ -17,6 +17,7 @@ namespace UserControlSystem.UI.View
         [SerializeField] private GameObject _patrolButton;
         [SerializeField] private GameObject _stopButton;
         [SerializeField] private GameObject _produceUnitButton;
+        [SerializeField] private GameObject _setRellyButton;
 
         private Dictionary<Type, GameObject> _buttonsByExecutorType;
 
@@ -33,6 +34,7 @@ namespace UserControlSystem.UI.View
                 .Add(typeof(ICommandExecutor<IStopCommand>), _stopButton);
             _buttonsByExecutorType
                 .Add(typeof(ICommandExecutor<IProduceUnitCommand>), _produceUnitButton);
+            _buttonsByExecutorType.Add(typeof(ICommandExecutor<ISetRallyPointCommand>), _setRellyButton);
         }
         public void BlockInteractions(ICommandExecutor ce)
         {
